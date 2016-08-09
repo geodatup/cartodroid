@@ -148,3 +148,26 @@ sudo apt-get update && sudo apt-get upgrade -y
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  
+
+1.  Edit /etc/init.d/hostapd and add/alter location of your conf
+    file **DAEMON\_CONF=/etc/hostapd.conf** and
+    binary **DAEMON\_SBIN=/usr/sbin/hostapd**
+
+2.  Link **/etc/network/interfaces.hostapd** to **/etc/network/interfaces**
+
+3.  Reboot
+
+4.  Predefined network name: “BOARD NAME” password: 12345678
+
+5.  To change parameters, edit /etc/hostapd.conf BTW: You can get WPAPSK the
+    long blob from wpa\_passphrase YOURNAME YOURPASS
+
+ 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+apt-get install dnsmasq
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+ 
