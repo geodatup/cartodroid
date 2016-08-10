@@ -14,7 +14,3 @@ apt-get -y install --no-install-recommends docker-hypriot
 apt-get -y install cgroupfs-mount 
 reboot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- 
-
-1.   
