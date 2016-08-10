@@ -1,8 +1,9 @@
 #!/bin/sh
-
 mv /etc/network/interfaces.hostapd /etc/network/interfaces.hostapd.bkp &&
+wget -P /etc/network https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/interfaces.hostapd &&
+mv /etc/network/interfaces /etc/network/interfaces.bkp &&
 
-ln -s /etc/network/interfaces /etc/network/interfaces.hostapd &&
+ln -s /etc/network/interfaces.hostapd /etc/network/interfaces &&
 
 wget -P /etc/network https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/interfaces.hostapd &&
 
@@ -35,7 +36,7 @@ sleep 5
 
 sudo sh -c "iptables-save > /etc/iptables.ipv4.nat" &&
 
-#sudo mv /etc/rc.local /etc/rc.local.bak &&
+sudo mv /etc/rc.local /etc/rc.local.bak &&
 
 wget -P /etc https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/rc.local &&
 

@@ -60,8 +60,7 @@ root@odroidc2:~# /etc/init.d/dnsmasq stop
 root@odroidc2:~# /etc/init.d/networking restart
 [....] Restarting networking (via systemctl): networking.serviceWarning: Unit file of networking.service changed on disk, 'systemctl daemon-reload' recommended.
 . ok 
-root@odroidc2:~# nan
-[1] 1680
+root@odroidc2:~# [1] 1680
 Configuration file: /etc/hostapd.conf
 [....] Starting dnsmasq (via systemctl): dnsmasq.serviceUsing interface wlan0 with hwaddr 7c:dd:90:ad:67:c2 and ssid "SSID"
 Job for dnsmasq.service failed. See 'systemctl status dnsmasq.service' and 'journalctl -xn' for details.
