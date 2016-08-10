@@ -36,7 +36,8 @@ To start AP automatically:
 Configurer le DNSMASQ
 =====================
 
-<https://frillip.com/using-your-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/>
+<https://frillip.com/using-cd
+intcd-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/>
 
  
 
@@ -59,7 +60,7 @@ root@odroidc2:~# /etc/init.d/dnsmasq stop
 root@odroidc2:~# /etc/init.d/networking restart
 [....] Restarting networking (via systemctl): networking.serviceWarning: Unit file of networking.service changed on disk, 'systemctl daemon-reload' recommended.
 . ok 
-root@odroidc2:~# hostapd /etc/hostapd.conf & /etc/init.d/dnsmasq start
+root@odroidc2:~# nan
 [1] 1680
 Configuration file: /etc/hostapd.conf
 [....] Starting dnsmasq (via systemctl): dnsmasq.serviceUsing interface wlan0 with hwaddr 7c:dd:90:ad:67:c2 and ssid "SSID"
