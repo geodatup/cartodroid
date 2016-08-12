@@ -14,8 +14,10 @@ chmod +x install_wifi_AP.sh
 
 ./install_wifi_AP.sh
 
-wget https://raw.githubusercontent.com/geodatup/geodroid/master/script/install_geodroid_C2.sh
+wget https://raw.githubusercontent.com/geodatup/geodroid/master/script/install_docker_C2.sh
 
-chmod +x install_geodroid_C2.sh
+chmod +x install_docker_C2.sh
 
-./install_geodroid_C2.sh
+./install_docker_C2.sh
+
+reboot

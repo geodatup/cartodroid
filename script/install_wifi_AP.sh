@@ -1,5 +1,6 @@
 #!/bin/sh
 apt-get install dnsmasq -y
+apt-get install iptables -y
 mv /etc/network/interfaces.hostapd /etc/network/interfaces.hostapd.bkp &&
 wget -P /etc/network https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/interfaces.hostapd &&
 mv /etc/network/interfaces /etc/network/interfaces.bkp &&
