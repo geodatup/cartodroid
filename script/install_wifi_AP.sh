@@ -1,4 +1,5 @@
 #!/bin/sh
+apt-get install dnsmasq -y
 mv /etc/network/interfaces.hostapd /etc/network/interfaces.hostapd.bkp &&
 wget -P /etc/network https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/interfaces.hostapd &&
 mv /etc/network/interfaces /etc/network/interfaces.bkp &&
@@ -8,10 +9,10 @@ ln -s /etc/network/interfaces.hostapd /etc/network/interfaces &&
 wget -P /etc/network https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/interfaces.hostapd &&
 
 #sudo ifdown wlan0; sudo ifup wlan0 &&
+mv /etc/hostapd.conf /etc/hostapd.conf.bkp
+wget -P /etc https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/hostapd.conf &&
 
-wget -P /etc/hostapd https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/hostapd.conf &&
-
-
+mv /etc/init.d/hostapd /etc/hostapd.bkp
 wget -P /etc/init.d https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/hostapd &&
 
 sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig &&

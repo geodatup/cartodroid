@@ -1,5 +1,27 @@
-How to set wireless access point?
-=================================
+ 
+=
+
+Activer la clé wifi
+===================
+
+Pour obtenir le nom de la clé
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ifconfig 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+Dans /etc/network/interfaces
+
+ 
+
+ 
+
+ 
+
+How to set wireless access point? (Jessie)
+==========================================
 
 There are two different hostap daemons. One is **default** and the other one is
 for some **Realtek** wifi cards. Both have their own basic configurations and
@@ -35,9 +57,6 @@ To start AP automatically:
 
 Configurer le DNSMASQ
 =====================
-
-<https://frillip.com/using-cd
-intcd-raspberry-pi-3-as-a-wifi-access-point-with-hostapd/>
 
  
 
