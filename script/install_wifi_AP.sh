@@ -16,34 +16,36 @@ wget -P /etc https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_
 mv /etc/init.d/hostapd /etc/hostapd.bkp
 wget -P /etc/init.d https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/hostapd &&
 
-sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig &&
+chmod +x /etc/init.d/hostapd &&
+
+mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig &&
 
 wget -P /etc https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/dnsmasq.conf &&
 
-sudo mv /etc/sysctl.conf /etc/sysctl.conf.bak &&
+mv /etc/sysctl.conf /etc/sysctl.conf.bak &&
 
 wget -P /etc https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/sysctl.conf &&
 
-sudo sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward" &&
+sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward" &&
 
 sleep 5
 
-sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE  
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT  
+iptables -A FORWARD -i eth0 -o wlx7cdd90ad67c2 -m state --state RELATED,ESTABLISHED -j ACCEPT
 
-sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT 
+iptables -A FORWARD -i wlx7cdd90ad67c2 -o eth0 -j ACCEPT
 
 sleep 5
 
-sudo sh -c "iptables-save > /etc/iptables.ipv4.nat" &&
+sh -c "iptables-save > /etc/iptables.ipv4.nat" &&
 
-sudo mv /etc/rc.local /etc/rc.local.bak &&
+mv /etc/rc.local /etc/rc.local.bak &&
 
 wget -P /etc https://raw.githubusercontent.com/geodatup/geodroid/master/wifi_AP_src/rc.local &&
 
-chmod +x rc.local &&
+chmod +x /etc/rc.local &&
 
-sudo service hostapd start 
+service hostapd start
 
-sudo service dnsmasq start
+service dnsmasq start
