@@ -71,5 +71,4 @@ Pour faire fonctionner le projet sur une carte Odroid, il faut néanmoins ajuste
 la configuration initiale de Julien Ancelin pour garder la même logique
 efficace.
 
-La documentation complète est disponible [ici,
-RTD](http://cartodroid.readthedocs.io/en/latest/) !
+La documentation complète est disponible !

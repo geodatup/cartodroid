@@ -6,7 +6,7 @@
 #  Created by Hugo Roussaffa on 13/08/2016.
 #
 
-# Construire son arborescence dans geodroid
+# Construire son arborescence dans cartodroid
 
 mkdir /home/geodatup
 wget -P /home/geodatup https://github.com/jancelin/geo-poppy/raw/master/install/geopoppy_sig.tar &&
