@@ -1,4 +1,4 @@
-Bienvenue sur la documentation de geodroid
+Bienvenue sur la documentation de cartodroid
 ==========================================
 
  

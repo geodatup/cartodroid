@@ -1,4 +1,4 @@
-# geodroid
+# cartodroid
 
-la documentation est disponible ici
-http://geodroid.readthedocs.io/en/latest/
+La documentation complète est disponible ici
+http://cartodroid.readthedocs.io/en/latest/
