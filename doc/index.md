@@ -88,9 +88,8 @@ Tous les logiciels sont open sources et ne nécéssite pas  l'achat d'une  licen
 - Qgis (+ plugin Lizmap): n’est pas installé sur le serveur mais sur un
 ordinateur de bureau.
 
-- Postgis
+- Postgis.
 
-- Qgis Serveur
+- Qgis Serveur.
 
-- [Lizmap](http://www.3liz.com/lizmap.html) Web Client (interface d'édition de
-l'utilisateur)
+- [Lizmap](http://www.3liz.com/lizmap.html) Web Client (interface d'édition de l'utilisateur)
