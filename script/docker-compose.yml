@@ -1,31 +1,31 @@
 lizmap:
 
-build: git://github.com/geodatup/docker-lizmap-odroidC2
+  build: git://github.com/geodatup/docker-lizmap-odroidC2
 
-restart: always
+  restart: always
 
-ports:
+  ports:
 
-\- "80:80"
+  - "80:80"
 
-volumes:
+  volumes:
 
-\- "/home/cartodroid/lizmap/project:/home"
+  - "/home/cartodroid/lizmap/project:/home"
 
-\- "/home/cartodroid/lizmap/project/var:/var/www/websig/lizmap/var"
+  - "/home/cartodroid/lizmap/project/var:/var/www/websig/lizmap/var"
 
-\- "/home/cartodroid/lizmap/project/tmp:/tmp"
+  - "/home/cartodroid/lizmap/project/tmp:/tmp"
 
 postgis:
 
-build: git://github.com/geodatup/docker-postgis-odroidC2
+  build: git://github.com/geodatup/docker-postgis-odroidC2
 
-restart: always
+  restart: always
 
-ports:
+  ports:
 
-\- "5432:5432"
+  - "5432:5432"
 
-volumes:
+  volumes:
 
-\- "/home/cartodroid/postgres_data:/var/lib/postgresql"
+  - "/home/cartodroid/postgres_data:/var/lib/postgresql"
