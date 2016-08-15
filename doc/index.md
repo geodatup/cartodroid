@@ -9,8 +9,8 @@ cartographiques de terrain.  
 Ce serveur cartographique portable diffuse vos cartes réalisées sous Qgis
 lorsque vous êtes sur le terrain.
 
-  Les principaux besoins résolu
--------------------------------
+  A quoi ça sert ? 
+-------------------
 
 -   Nous voulons cartographier, quantifier ou décrire des peuplements forestiers
     d'une propriété de plusieurs centaines d'hectares.
@@ -41,6 +41,11 @@ lorsque vous êtes sur le terrain.
 
 Les fonctionnalités
 -------------------
+
+### L’authentification<http://docs.3liz.com/fr/user_guide.html#authentication>
+
+L’administrateur peut restreindre l’accès aux cartes. Pour accéder à ces cartes,
+il faut vous s’authentifier.
 
 ### La localisation par couche
 
@@ -76,6 +81,8 @@ données. Il a aussi la possibilité de limiter les modifications possibles :
 
 -   suppression d’objet
 
+ 
+
 Les briques techniques
 ----------------------
 
@@ -99,7 +106,7 @@ Les briques techniques
 
 ### Logiciels intégrés
 
-Tous les logiciels sont open sources et ne nécéssite pas l'achat d'une licence.
+Tous les logiciels sont open sources et ne nécéssite pas d'achat de licence.
 
 -   Qgis (+ plugin Lizmap): n’est pas installé sur le serveur mais sur un
     ordinateur de bureau.
@@ -108,5 +115,5 @@ Tous les logiciels sont open sources et ne nécéssite pas l'achat d'une licence
 
 -   Qgis Serveur.
 
-\- [Lizmap](http://www.3liz.com/lizmap.html) Web Client (interface d'édition de
-l'utilisateur)
+-   [Lizmap](http://www.3liz.com/lizmap.html) Web Client (interface
+    utilisateur).
