@@ -1,0 +1,31 @@
+lizmap:
+
+build: git://github.com/geodatup/docker-lizmap-odroidC2
+
+restart: always
+
+ports:
+
+\- "80:80"
+
+volumes:
+
+\- "/home/cartodroid/lizmap/project:/home"
+
+\- "/home/cartodroid/lizmap/project/var:/var/www/websig/lizmap/var"
+
+\- "/home/cartodroid/lizmap/project/tmp:/tmp"
+
+postgis:
+
+build: git://github.com/geodatup/docker-postgis-odroidC2
+
+restart: always
+
+ports:
+
+\- "5432:5432"
+
+volumes:
+
+\- "/home/cartodroid/postgres_data:/var/lib/postgresql"
