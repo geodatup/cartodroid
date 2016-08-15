@@ -24,7 +24,7 @@ Installation de lizmap et postgis
 L’installation des images se font sur une architecture arm64.
 
 Nous avons choisi celle ci pour être compatible avec le server Docker qui tourne
-correctement sur l’Odroid C2 (Serveur Ubuntu Xenial).
+correctement sur l’Odroid C2 (Armbian Serveur Ubuntu Xenial).
 
 **aarch64/debian**
 
