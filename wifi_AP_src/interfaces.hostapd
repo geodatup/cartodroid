@@ -6,13 +6,14 @@ allow-hotplug eth0
 iface eth0 inet manual
 
 
-allow-hotplug wlx7cdd90ad67c2
-iface wlx7cdd90ad67c2 inet static
+allow-hotplug wlan0
+iface wlan0 inet static
     address 172.24.1.1
     netmask 255.255.255.0
     network 172.24.1.0
     broadcast 172.24.1.255
 
 iface br0 inet dhcp
-bridge_ports eth0 wlx7cdd90ad67c2
+bridge_ports eth0 wlan0
+
 #hwaddress ether # will be added at first boot
