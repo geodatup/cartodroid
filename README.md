@@ -1,5 +1,7 @@
 Cartodroid
 ==========
+> Attention, il s'agit d'un projet en cours de développement
+
 
 Le projet est basé sur le travail de Julien Ancelin (Geoppopy - Lizmap sur
 Raspberry Pi).
