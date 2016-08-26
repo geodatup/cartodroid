@@ -9,7 +9,7 @@ cartographiques de terrain.  
 Ce serveur cartographique portable diffuse vos cartes réalisées sous Qgis
 lorsque vous êtes sur le terrain.
 
-![Interface](./image/interface_sample.tiff)
+![Interface](./image/interface_sample.jpg)
 
 A quoi sert CartOdroid? 
 -------------------

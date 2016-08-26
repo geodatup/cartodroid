@@ -13,25 +13,25 @@ Pourquoi porter le projet sur un autre serveur ?
 Odroid est un concurent sérieux au Raspberry Pi. Son point fort est qu'il est
 plus puissant pour un prix presque équivalent. Vous trouverez de nombreux
 comparatifs sur internet à ce sujet. Nous nous intéresserons uniquement aux
-caractéristiques essentiels au fonctionnement du projet.
+caractéristiques essentiels pour le bon fonctionnement du projet.
 
 Deuxièmement, l'Odroid est particulièrement bien adapté aux projets portables.
 C’est particulièrement vrai pour l'Odroid C0 car il embarque avec lui un module
-d'alimentation Lipo. Faite l'achat d'une batterie et le serveur devient autonome
+d'alimentation batterie Lipo. Faites l'achat d'une batterie et le serveur devient autonome
 (avec switch on/off intégré). Cela est évidement possible sur le Raspberry Pi,
-mais cela nécéssite l'adjonction d'une carte HAT, ou d'un ensemble de composant
+mais nécéssite l'adjonction d'une carte HAT, ou d'un ensemble de composant
 pour assurer un fonctionement simple. L'Odroid C2 doit aussi être équipé d'une
-telle carte supplémentaire mais celle ci est disponible à l'achat contrairement
+telle carte supplémentaire mais celle-ci est disponible à l'achat contrairement
 au RPI où les ruptures de stock sont très fréquentes et où les prix sont assez
 élevés.
 
 ### Comparatif des coûts de base
 
--   odroid C0 (25 \$)
+-   odroid C0 (25 $)
 
--   odroid C2 (40 \$)
+-   odroid C2 (40 $)
 
--   raspberri Pi 3 (35 \$)
+-   raspberri Pi 3 (35 $)
 
 ### Avec ajout d'un module pour l'autonomie
 
