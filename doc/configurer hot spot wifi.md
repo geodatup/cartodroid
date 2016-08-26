@@ -71,6 +71,38 @@ Wifi hotspot troubleshooting
 
  
 
+ 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+root@odroidc2:~# hostapd /etc/hostapd.conf
+Configuration file: /etc/hostapd.conf
+Driver does not support configured HT capability [DSSS_CCK-40]
+wlan0: interface state UNINITIALIZED->DISABLED
+wlan0: AP-DISABLED 
+wlan0: Unable to setup interface.
+wlan0: interface state DISABLED->DISABLED
+wlan0: AP-DISABLED 
+hostapd_free_hapd_data: Interface wlan0 wasn't started
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+make sur the hosted.conf is adapt to your wifi dongle
+
+ 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+root@odroidc2:~# hostapd /etc/hostapd.conf
+Configuration file: /etc/hostapd.conf
+Line 20: unknown configuration item 'noscan'
+1 errors found in configuration file '/etc/hostapd.conf'
+Failed to set up interface with /etc/hostapd.conf
+Failed to initialize interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+the line 20 should be commented
+
+ 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 root@odroidc2:~# /etc/init.d/hostapd stop
 [ ok ] Stopping hostapd (via systemctl): hostapd.service.

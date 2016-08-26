@@ -57,7 +57,7 @@ docker build -t geodatup/lizmap git://github.com/geodatup/docker-lizmap-odroidC2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-docker run --restart="always" --name « geodatup/lizmap" -p 80:80 -d -t -v /home/lizmap_project:/home -v /home/GeoPoppy/lizmap_project/lizmap_var:/var/www/websig/lizmap/var lizmap
+docker run --restart="always" --name "lizmap" -p 80:80 -d -t -v /home/lizmap_project:/home -v /home/GeoPoppy/lizmap_project/lizmap_var:/var/www/websig/lizmap/var geopoppy_lizmap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Postgis**
@@ -67,5 +67,18 @@ docker build -t geodatup/postgis git://github.com/geodatup/docker-postgis-odroid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-docker run --restart="always" --name "geodatup/postgis" -p 5432:5432 -d -v /home/GeoPoppy/postgres_data:/var/lib/postgresql postgis
+docker run --restart="always" --name "postgis" -p 5432 -d -v /home/GeoPoppy/postgres_data:/var/lib/postgresql geopoppy_postgis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ 
+
+Troubleshooting
+---------------
+
+Lorsqu’on accède à la page
+
+<http://172.24.1.1/websig/lizmap/www/>
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Error 500. A technical error has occured. Sorry for this trouble.Application log directory is not writable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
