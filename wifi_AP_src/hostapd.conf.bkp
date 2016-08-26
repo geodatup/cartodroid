@@ -1,5 +1,5 @@
 ssid=cartodroid
-interface=wlx7cdd90ad67c2
+interface=wlan0
 hw_mode=g
 channel=5
 driver=nl80211
@@ -17,7 +17,7 @@ wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 auth_algs=1
 macaddr_acl=0
-noscan=1
+#noscan=1
 #ht_capab=[HT40-][SHORT-GI-40][SHORT-GI-40][DSSS_CCK-40]
 #country_code=SI
 #ieee80211d=1
