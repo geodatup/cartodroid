@@ -1,51 +1,64 @@
-Bienvenue sur la documentation de cartodroid
+Bienvenue sur la documentation de CartOdroid
 ============================================
 
  
 
-Cartodroid est un outil de consultation et de mise à jour vos données
+CartOdroid est un outil de consultation et de mise à jour vos données
 cartographiques de terrain.  
 
 Ce serveur cartographique portable diffuse vos cartes réalisées sous Qgis
 lorsque vous êtes sur le terrain.
 
-  A quoi ça sert ? 
+![Interface](./image/interface_sample.tiff)
+
+A quoi sert CartOdroid? 
 -------------------
 
--   Nous voulons cartographier, quantifier ou décrire des peuplements forestiers
+-   Nous pouvons cartographier, quantifier ou décrire des peuplements forestiers
     d'une propriété de plusieurs centaines d'hectares.
 
--   Nous ne disposons ni de couverture réseau internet (Edge, 3G/4G) ni
-    d'éléctrecité sur cette zone alors que les cartes IGN, Open Street Map ou
-    même vos images aériennes aqcuises par drone sont accéssibles.
+-   Sans couverture réseau internet (Edge, 3G/4G) ni
+    éléctrecité sur cette zone nous accédons aux  cartes IGN, Open Street Map et images aériennes aqcuises par drone, avion ou satellite.
 
--   Nous souhaitons utiliser les mêmes cartes que celles disponibles au bureau
+-   Nous  utilisons les mêmes cartes que celles disponibles au bureau
     afin de faciliter les mises à jours de données et de former les utilisateurs
     aux mêmes méthodes de saisie.
 
--   La visualisation et l'intégration des données se fait sur tous les types de
+-   La visualisation et l'intégration des données se fait sur tous types de
     tablettes, smartphones, pc (apple, android, windows, linux) directement
     depuis le navigateur internet sans applications supplémentaires.
 
--   Vos données sont synchronisées vers une base de donnée et sauvegardées quand
-    le serveur dispose d'une connexion internet sécurisée au bureau.
+-  Les données sont synchronisées vers une base de donnée de sauvegardes quand
+    le serveur dispose d'une connexion internet sécurisée.
 
--   Les stagiaires, techniciens et même les propriétaires forestiers peuvent
-    être autonomes dans la saisie des données en 10 min de pratique.
+-   Les stagiaires, techniciens et même les propriétaires forestiers sont autonomes dans la saisie des données en moins de 10 min.
 
 -   L'outil est autonome, petit, léger, simple d'utilisation pour être emmené
     dans la poche ou un sac à dos.
 
--   Faire des économies car les licences d'utilisation sont gratuites et
-    OpenSource.   Les fonctionnalités de Lizmap
+-   Faite des économies avec des licences d'utilisation gratuites et
+    OpenSource.
+    
+
+
 
 Les fonctionnalités
 -------------------
 
-### L’authentification<http://docs.3liz.com/fr/user_guide.html#authentication>
+### L’authentification
 
 L’administrateur peut restreindre l’accès aux cartes. Pour accéder à ces cartes,
 il faut vous s’authentifier.
+
+[Plus de détail dans la documentation de Lizmap](<http://docs.3liz.com/fr/user_guide.html#authentication>)
+
+### Recherche d’adresse
+ 
+La recherche des adresses se fait via les moteurs de recherches suivants : 
+ 
+* Nominatim (OpenStreetMap) 
+* Google
+* Géoportail
 
 ### La localisation par couche
 
