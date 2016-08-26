@@ -1,6 +1,6 @@
 Bienvenue sur la documentation de CartOdroid
 ============================================
-
+<!--Attention, il s'agit d'un projet en cours de développement-->
  
 
 CartOdroid est un outil de consultation et de mise à jour vos données
