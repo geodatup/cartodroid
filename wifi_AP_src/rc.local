@@ -1,3 +1,5 @@
+#remove wifi hostapd conf odroid C2
+
 #!/bin/sh -e
 #
 # rc.local
@@ -10,5 +12,7 @@
 # bits.
 #
 # By default this script does nothing.
+/etc/c2_init.sh
 iptables-restore < /etc/iptables.ipv4.nat  
+/etc/init.d/samba restart
 exit 0

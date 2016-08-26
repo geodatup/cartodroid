@@ -1,0 +1,19 @@
+
+auto lo br0
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet dhcp
+
+
+allow-hotplug wlan0
+iface wlan0 inet static
+    address 172.24.1.1
+    netmask 255.255.255.0
+    network 172.24.1.0
+    broadcast 172.24.1.255
+
+#iface br0 inet dhcp
+#bridge_ports eth0 wlan0
+
+#hwaddress ether # will be added at first boot
