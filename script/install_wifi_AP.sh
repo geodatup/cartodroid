@@ -9,7 +9,7 @@ ln -s /etc/network/interfaces.hostapd /etc/network/interfaces &&
 
 wget -P /etc/network https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/interfaces.hostapd &&
 
-#sudo ifdown wlan0; sudo ifup wlan0 &&
+sudo ifdown wlan0; sudo ifup wlan0 &&
 mv /etc/hostapd.conf /etc/hostapd.conf.bkp
 wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/hostapd.conf &&
 
@@ -32,9 +32,9 @@ sleep 5
 
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
-iptables -A FORWARD -i eth0 -o wlx7cdd90ad67c2 -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 
-iptables -A FORWARD -i wlx7cdd90ad67c2 -o eth0 -j ACCEPT
+iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
 
 sleep 5
 
@@ -46,6 +46,7 @@ wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_A
 
 chmod +x /etc/rc.local &&
 
-service hostapd start
-
-service dnsmasq start
+systemctl daemon-reload
+service hostapd restart
+service dnsmasq restart
+reboot
