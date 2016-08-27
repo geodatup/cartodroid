@@ -130,3 +130,11 @@ Tous les logiciels sont open sources et ne nécéssite pas d'achat de licence.
 
 -   [Lizmap](http://www.3liz.com/lizmap.html) Web Client (interface
     utilisateur).
+
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+   
+   Installation
