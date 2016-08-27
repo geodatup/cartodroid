@@ -27,7 +27,10 @@ mv /etc/sysctl.conf /etc/sysctl-enabled.conf.bak &&
 wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src-disable/sysctl.conf &&
 
 #sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward" &&
-iptables-restore
+echo 0 > /proc/sys/net/ipv4/ip_forward &&
+sysctl -p /etc/sysctl.conf
+
+#iptables-restore
 sleep 5
 
 #iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE

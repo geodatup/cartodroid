@@ -1,6 +1,4 @@
  
-=
-
 Activer la clé wifi
 ===================
 
@@ -154,3 +152,27 @@ wlan0: STA 00:26:08:f6:83:01 WPA: pairwise key handshake completed (RSN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 la connection est alors établie.
+
+
+
+###IPTABLES
+`iptables -nvL`
+
+`iptables -L --line-numbers`
+
+ voir la [doc](http://www.octetmalin.net/linux/tutoriels/ip-forward.php) 
+ 
+ ~~~
+ sysctl net.ipv4.ip_forward
+ sysctl -w net.ipv4.ip_forward=1
+nano /etc/sysctl.conf
+ sysctl -p /etc/sysctl.conf
+ ~~~
+
+###Check routes
+
+
+~~~
+route -n
+~~~
+
