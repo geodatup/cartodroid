@@ -29,7 +29,7 @@ chmod +x install_docker_C2.sh
 # install pip et ipaddress (need by docker-compose)
 wget https://bootstrap.pypa.io/get-pip.py
 python get-pip.py
-pip install ipadress
+pip install ipaddress
 
 
 
