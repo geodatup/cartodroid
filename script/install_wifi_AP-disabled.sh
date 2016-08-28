@@ -1,6 +1,4 @@
 #!/bin/sh
-#apt-get install dnsmasq -y
-#apt-get install iptables -y
 
 rm /etc/network/interfaces.hostapd
 
@@ -12,4 +10,4 @@ wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_A
 
 service hostapd restart
 
-#service dnsmasq restart
+service dnsmasq restart
