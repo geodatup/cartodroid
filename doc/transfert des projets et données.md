@@ -55,11 +55,22 @@ configurer host
 (for i in $(seq 50 150); do echo 172.24.1.50 $i client$i; done) >> /etc/hosts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
+Configurer les droits d'ecriture au dossier. On ajoute user au groupe www-data
+
+~~~
+
+~~~
+
+
+
 Redemarer samba et tester la connection depuis un autre ordinateur sur le reseau
 
 ~~~
 /etc/init.d/samba restart
 ~~~
+
+
 
 
 Démarrage automatique de samba.

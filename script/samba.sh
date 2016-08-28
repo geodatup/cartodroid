@@ -8,7 +8,7 @@ wget -P /etc/samba/ https://raw.githubusercontent.com/geodatup/cartodroid/master
 
 
 mv /etc/hostname /etc/hostname.bkp
-wget -P /etc/hostname/ https://raw.githubusercontent.com/geodatup/cartodroid/master/samba-files/hostname
+wget -P /etc/ https://raw.githubusercontent.com/geodatup/cartodroid/master/samba-files/hostname
 
 
 (for i in $(seq 50 150); do echo 172.24.1.$i client$i; done) >> /etc/hosts
