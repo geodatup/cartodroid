@@ -78,8 +78,10 @@ reboot the system
 # ./create_dynamic_AP
 
 # Samba
-apt-get install -y samba samba-common python-glade2 system-config-samba
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/samba.sh
 
-/etc/init.d/samba restart
+chmod +x samba.sh
+
+./samba.sh
 
 reboot

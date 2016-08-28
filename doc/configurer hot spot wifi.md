@@ -153,6 +153,12 @@ wlan0: STA 00:26:08:f6:83:01 WPA: pairwise key handshake completed (RSN)
 
 la connection est alors établie.
 
+### aucune IP sur wlan
+~~~
+ifdown wlan0
+ifup wlan0
+/etc/init.d/dnsmasq restart 
+~~~
 
 
 ###IPTABLES
