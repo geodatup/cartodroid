@@ -2,7 +2,7 @@
 apt-get install dnsmasq -y
 apt-get install iptables -y
 
-mv /etc/network/interfaces /etc/network/interfaces.bkp &&
+rm /etc/network/interfaces 
 ln -s /etc/network/interfaces.hostapd /etc/network/interfaces &&
 
 wget -P /etc/network https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/interfaces.hostapd.web  &&
@@ -52,6 +52,6 @@ wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_A
 
 chmod +x /etc/rc.local &&
 # activer le wifi en mode web (eth0 connection)
-./wifi_web
+./wifi_web.sh
 
 reboot
