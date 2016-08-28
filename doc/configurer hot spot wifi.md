@@ -182,3 +182,8 @@ nano /etc/sysctl.conf
 route -n
 ~~~
 
+
+##Ip en temps réel
+~~~
+ip monitor
+~~~
