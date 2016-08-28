@@ -14,9 +14,11 @@ wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_A
 
 wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/wifi_noweb.sh
 wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/wifi_web.sh
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/reload_AP.sh
 
 chmod +x wifi_noweb.sh
 chmod +x wifi_web.sh
+chmod +x reload_AP.sh
 
 mv /etc/init.d/hostapd /etc/hostapd.bkp
 wget -P /etc/init.d https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/hostapd &&
