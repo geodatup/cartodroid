@@ -1,17 +1,22 @@
 #!/bin/sh
 apt-get install dnsmasq -y
 apt-get install iptables -y
-mv /etc/network/interfaces.hostapd /etc/network/interfaces.hostapd.bkp &&
-wget -P /etc/network https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/interfaces.hostapd &&
-mv /etc/network/interfaces /etc/network/interfaces.bkp &&
 
+mv /etc/network/interfaces /etc/network/interfaces.bkp &&
 ln -s /etc/network/interfaces.hostapd /etc/network/interfaces &&
 
-wget -P /etc/network https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/interfaces.hostapd &&
+wget -P /etc/network https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/interfaces.hostapd.web  &&
+wget -P /etc/network https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src-disable/interfaces.hostapd.noweb &&
 
-sudo ifdown wlan0; sudo ifup wlan0 &&
 mv /etc/hostapd.conf /etc/hostapd.conf.bkp
-wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/hostapd.conf &&
+wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/hostapd.conf.web &&
+wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src-disable/hostapd.conf.noweb &&
+
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/wifi_noweb.sh
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/wifi_web.sh
+
+chmod +x wifi_noweb.sh
+chmod +x wifi_web.sh
 
 mv /etc/init.d/hostapd /etc/hostapd.bkp
 wget -P /etc/init.d https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/hostapd &&
@@ -27,6 +32,7 @@ mv /etc/sysctl.conf /etc/sysctl.conf.bak &&
 wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/sysctl.conf &&
 
 sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward" &&
+
 
 sleep 5
 
@@ -45,8 +51,7 @@ mv /etc/rc.local /etc/rc.local.bak &&
 wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/rc.local &&
 
 chmod +x /etc/rc.local &&
+# activer le wifi en mode web (eth0 connection)
+./wifi_web
 
-systemctl daemon-reload
-service hostapd restart
-service dnsmasq restart
 reboot
