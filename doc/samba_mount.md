@@ -1,0 +1,1 @@
+sudo mount -t cifs -o username=guest,password=, //192.168.1.99/Shares /mnt/share
