@@ -6,4 +6,5 @@ sleep 5
 service hostapd start
 service dnsmasq start
 
+/etc/init.d/samba restart
 sleep 20
