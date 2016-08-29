@@ -14,7 +14,6 @@ Installer Samba
 apt-get install -y samba samba-common python-glade2 system-config-samba
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- 
 
 configurer Samba
 
@@ -33,7 +32,7 @@ security = user
 map to guest = bad user
 dns proxy = no
 #===== Share Definitions =====
-[lizmap_project]
+[lizmap]
 path = /home/GeoPoppy/lizmap_project
 browsable = yes
 writable = yes
@@ -56,10 +55,9 @@ configurer host
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-Configurer les droits d'ecriture au dossier. On ajoute user au groupe www-data
-
+Configurer les droits d'ecriture au dossier. On ajoute les droits d'ecriture à tous le monde
 ~~~
-
+chmod ugo+w -R 
 ~~~
 
 
