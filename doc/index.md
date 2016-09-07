@@ -20,11 +20,13 @@ A quoi sert CartOdroid?
     afin de faciliter les mises à jours de données et de former les utilisateurs
     aux mêmes méthodes de saisie.
 
+-   On améliore la communication avec les partenaires avec des cartes à jour !
+
 -   La visualisation et l'intégration des données se fait sur tous types de
     tablettes, smartphones, pc (apple, android, windows, linux) directement
     depuis le navigateur internet sans applications supplémentaires.
 
--  Les données sont synchronisées vers une base de donnée de sauvegardes quand
+-  Les données sont synchronisées vers une base de donnée de sauvegardées quand
     le serveur dispose d'une connexion internet sécurisée.
 
 -   Les stagiaires, techniciens et même les propriétaires forestiers sont autonomes dans la saisie des données en moins de 10 min.
