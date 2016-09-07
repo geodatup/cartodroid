@@ -11,13 +11,6 @@ apt-get update && apt-get upgrade -y
 # this package is useless
 apt-get autoremove libnl-route-3-200 -y
 
-# configure wifi AP
-wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/install_wifi_AP_C0.sh
-
-chmod +x install_wifi_AP_C0.sh
-
-./install_wifi_AP_C0.sh
-
 
 # install Docker
 wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/install_docker_C0.sh
@@ -48,5 +41,14 @@ wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/samba.s
 chmod +x samba.sh
 
 ./samba.sh
+
+
+# configure wifi AP
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/install_wifi_AP_C0.sh
+
+chmod +x install_wifi_AP_C0.sh
+
+./install_wifi_AP_C0.sh
+
 
 reboot
