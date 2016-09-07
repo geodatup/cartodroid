@@ -107,7 +107,6 @@ Odroid C2 est maintenant prêt à être paramètré.
 ##Installation automatique
 ~~~
 wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/auto_install_C2.sh
-./autoin
 chmod +x auto_install_C2.sh
 ./auto_install_C2.sh
 ~~~
