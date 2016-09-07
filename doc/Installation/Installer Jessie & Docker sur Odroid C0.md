@@ -125,19 +125,44 @@ iface wlan0 inet dhcp
     wpa-psk xxx
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- 
-
-Remplacez xxx par les paramètres wifi de votre box internet.
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-reboot 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+> Remplacez xxx par les paramètres wifi de votre box internet.
 
 Verifier que la clé wifi est reconnue
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 iwconfig
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Démmarer la carte wifi
+
+~~~
+ifup wlan0
+~~~
+
+réponse :
+
+~~~~
+Internet Systems Consortium DHCP Client 4.3.1
+Copyright 2004-2014 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+
+Listening on LPF/wlan0/7c:dd:90:ad:67:c2
+Sending on   LPF/wlan0/7c:dd:90:ad:67:c2
+Sending on   Socket/fallback
+DHCPDISCOVER on wlan0 to 255.255.255.255 port 67 interval 5
+DHCPDISCOVER on wlan0 to 255.255.255.255 port 67 interval 7
+DHCPREQUEST on wlan0 to 255.255.255.255 port 67
+DHCPOFFER from 192.168.1.1
+DHCPACK from 192.168.1.1
+bound to 192.168.1.47 -- renewal in 38708 seconds.
+~~~~
+
+notez l'adresse ip de votre carte.
+
+un `reboot` fonctione aussi
+
+
 
 Et que la connection à la box est bien possible
 
@@ -160,3 +185,5 @@ wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/auto
 chmod +x auto_install_C0.sh
 ./auto_install_C0.sh
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+l'opération peut prendre plusieurs dizaines de minutes.
