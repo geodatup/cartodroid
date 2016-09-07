@@ -3,11 +3,7 @@ Bienvenue sur la documentation de CartOdroid
 > Attention, il s'agit d'un projet en cours de développement
  
 
-CartOdroid est un outil de consultation et de mise à jour vos données
-cartographiques de terrain.  
-
-Ce serveur cartographique portable diffuse vos cartes réalisées sous Qgis
-lorsque vous êtes sur le terrain.
+CartOdroid est un outil de collecte et de consultation de données spatiale sur le terrain à partir de projet réalisés sous QGIS.
 
 ![Interface](./image/interface_sample.jpg)
 
@@ -18,7 +14,7 @@ A quoi sert CartOdroid?
     d'une propriété de plusieurs centaines d'hectares.
 
 -   Sans couverture réseau internet (Edge, 3G/4G) ni
-    éléctrecité sur cette zone nous accédons aux  cartes IGN, Open Street Map et images aériennes aqcuises par drone, avion ou satellite.
+    éléctrecité sur cette zone nous accédons aux cartes IGN, Open Street Map et images aériennes aqcuises par drone, avion ou satellite.
 
 -   Nous  utilisons les mêmes cartes que celles disponibles au bureau
     afin de faciliter les mises à jours de données et de former les utilisateurs
