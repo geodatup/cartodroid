@@ -9,7 +9,7 @@
 apt-get update && apt-get upgrade -y
 
 
-apt-get autoremove libnl-route-3-200
+apt-get autoremove libnl-route-3-200 -y
 
 # configure wifi AP
 wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/install_wifi_AP.sh
