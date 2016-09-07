@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#  auto_install_geodroid_C2.sh
+#  auto_install_C2.sh
 #  
 #
 #  Created by Hugo Roussaffa on 12/08/2016.
@@ -54,28 +54,6 @@ you get your mac address with this command : ip addr
 reboot the system
 """
 
-
-
-#apt-get install -y dnsmasq &&
-#mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig &&
-#
-#wget -P /etc https://raw.githubusercontent.com/geodatup/cartodroid/master/wifi_AP_src/dnsmasq.conf &&
-#
-#
-#
-#git clone https://github.com/oblique/create_ap
-#cd create_ap
-#make install
-#
-#wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/create_dynamic_AP.sh
-
-#chmod +x create_dynamic_AP.sh
-
-#systemctl start create_ap -n wlan0 MyAccessPoint
-#systemctl enable create_ap
-#
-# Conf create_ap !!!
-# ./create_dynamic_AP
 
 # Samba
 wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/samba.sh
