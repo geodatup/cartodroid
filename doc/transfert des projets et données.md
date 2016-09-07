@@ -56,6 +56,7 @@ configurer host
 
 
 Configurer les droits d'ecriture au dossier. On ajoute les droits d'ecriture à tous le monde
+
 ~~~
 chmod ugo+w -R 
 ~~~
