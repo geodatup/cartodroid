@@ -8,11 +8,11 @@
 
 apt-get update && apt-get upgrade -y
 
-
-apt-get autoremove libnl-route-3-200
+# this package is useless
+apt-get autoremove libnl-route-3-200 -y
 
 # configure wifi AP
-wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/install_wifi_AP_C0.sh
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/install_wifi_AP_C0.sh
 
 chmod +x install_wifi_AP_C0.sh
 
@@ -20,7 +20,7 @@ chmod +x install_wifi_AP_C0.sh
 
 
 # install Docker
-wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/install_docker_C0.sh
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/install_docker_C0.sh
 
 chmod +x install_docker_C0.sh
 
@@ -35,7 +35,7 @@ pip install ipaddress
 
 # install Docker Lizmap && Docker Postgis (64 bits)
 
-wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/install_geopoppy.sh
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/install_geopoppy.sh
 
 chmod +x install_geopoppy.sh
 
