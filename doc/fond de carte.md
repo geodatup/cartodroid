@@ -27,3 +27,15 @@ procedure :
 
 
 #IGN
+
+Créer un compte sur le site de [l'IGN pro](http://professionnels.ign.fr/)
+
+Créer un contrat d'accès au "geoservices".
+
+Modifier la sécurisation.
+
+définir l'usage de la clé sur QGIS ou IP
+
+Récupérer la clé. 
+
+Inserer la clé 

@@ -16,6 +16,6 @@ tar xvfz /home/geodatup/geopoppy_base.tar --preserve-permissions --same-owner -C
 
 cd /home/GeoPoppy &&
 rm docker-compose.yml
-wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/CO/docker-compose.yml
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/docker-compose.yml
 chmod +x docker-compose.yml 
 docker-compose up -d

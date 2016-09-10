@@ -20,11 +20,11 @@ chmod +x install_wifi_AP.sh
 
 
 # install Docker
-wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/install_docker_C2.sh
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/install_docker.sh
 
-chmod +x install_docker_C2.sh
+chmod +x install_docker.sh
 
-./install_docker_C2.sh
+./install_docker.sh
 
 
 

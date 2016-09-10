@@ -13,11 +13,11 @@ apt-get autoremove libnl-route-3-200 -y
 
 
 # install Docker
-wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/install_docker_C0.sh
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/install_docker.sh
 
-chmod +x install_docker_C0.sh
+chmod +x install_docker.sh
 
-./install_docker_C0.sh
+./install_docker.sh
 
 
 # install pip et ipaddress (need by docker-compose)
@@ -26,7 +26,7 @@ python get-pip.py
 pip install ipaddress
 
 
-# install Docker Lizmap && Docker Postgis (64 bits)
+# install Docker Lizmap && Docker Postgis (32 bits)
 
 wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/install_geopoppy.sh
 
@@ -41,6 +41,10 @@ wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/samba.s
 chmod +x samba.sh
 
 ./samba.sh
+
+wget https://raw.githubusercontent.com/geodatup/cartodroid/master/script/C0/readbatvol_C0.sh
+
+chmod +x readbatvol_C0.sh
 
 
 # configure wifi AP

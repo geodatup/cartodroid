@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#  auto_install_docker_C2.sh
+#  auto_install_docker.sh
 #  
 #
 #  Created by Zugi R on 12/08/2016.
