@@ -122,7 +122,7 @@ Tous les logiciels sont open sources et ne nécéssite pas d'achat de licence.
 -   Qgis (+ plugin Lizmap): n’est pas installé sur le serveur mais sur un
     ordinateur de bureau.
 
--   Postgis.
+-   PostGis.
 
 -   Qgis Serveur.
 

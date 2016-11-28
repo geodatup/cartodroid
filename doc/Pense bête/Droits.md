@@ -1,15 +1,15 @@
 changer de proprietaire
 =======================
 ~~~
-sudo chown -R www-data:www-data ann
+sudo chown -R www-data:www-data [dossier]
 ~~~
 donner les droits d'écriture au groupe
 ~~~
-sudo chmod -R g+w ann
+sudo chmod -R g+w [dossier]
 ~~~
 
 ### Ajouter un utilisateur au groupe
-useradd -g www-data users
+useradd -g www-data [users]
 
 ## lister utilisateur et groupes
 ~~~

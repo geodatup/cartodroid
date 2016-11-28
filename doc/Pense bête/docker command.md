@@ -25,3 +25,11 @@ docker run --restart="always" --name "lizmap" -p 80:80 -d -t -v /home/GeoPoppy/l
 
 chown -R www-data /var/config var/config /var/db /var/log /var/mails /var/uploads 
 chmod -R ug+w /var/config var/config /var/db /var/log /var/mails /var/uploads 
+
+
+
+
+
+chown -R www-data var/config var/db var/log var/mails var/uploads 
+chmod -R ug+w  var/config var/db var/log var/mails var/uploads 
+

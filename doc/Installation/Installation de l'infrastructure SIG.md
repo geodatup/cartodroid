@@ -82,3 +82,18 @@ Lorsqu’on accède à la page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Error 500. A technical error has occured. Sorry for this trouble.Application log directory is not writable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Les dossiers des persistance des données n'ont pas les bon droits. verifier que les dossiers et sous dossier sont writable par lizmap
+
+
+~~~
+Error 500. A technical error has occured. Sorry for this trouble.
+~~~
+Quand cela arrive sur l'url http://.../websig/lizmap/www/index.php/admin
+
+Que le lizmap/var/log/error.log contient
+~~~
+2016-11-10 08:40:23     192.168.1.13    error   2016-11-10 08:40:23     [100]   Action default:index: controller file /var/www/websig/lizmap/modules/admin/controllers/default.classic.php doesn't exists       /var/www/websig/lib/jelix/core/jCoordinator.class.
+php   250
+~~
+
+
