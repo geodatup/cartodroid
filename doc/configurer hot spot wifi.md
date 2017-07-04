@@ -8,20 +8,12 @@ Pour obtenir le nom de la clé
 ifconfig 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- 
-
-Dans /etc/network/interfaces
-
- 
-
- 
-
- 
+Dans `/etc/network/interfaces`
 
 How to set wireless access point? (Jessie)
 ==========================================
 
-There are two different hostap daemons. One is **default** and the other one is
+There are two different hostapd daemons. One is **default** and the other one is
 for some **Realtek** wifi cards. Both have their own basic configurations and
 both are patched to gain maximum performances.
 
@@ -38,28 +30,23 @@ Default binary and configuration location:
 
 To start AP automatically:
 
-1.  Edit /etc/init.d/hostapd and add/alter location of your conf
-    file **DAEMON\_CONF=/etc/hostapd.conf** and
-    binary **DAEMON\_SBIN=/usr/sbin/hostapd**
+1.  Edit `/etc/init.d/hostapd` and add/alter location of your conf
+    file **`DAEMON\_CONF=/etc/hostapd.conf`** and
+    binary **`DAEMON\_SBIN=/usr/sbin/hostapd`**
 
-2.  Copy **/etc/network/interfaces.hostapd** to **/etc/network/interfaces**
+2.  Copy **`/etc/network/interfaces.hostapd`** to **`/etc/network/interfaces`**
 
 3.  Reboot
 
 4.  Predefined network name: “SSID” password: 12345678
 
-5.  To change parameters, edit /etc/hostapd.conf BTW: You can get WPAPSK the
+5.  To change parameters, edit `/etc/hostapd.conf` BTW: You can get WPAPSK the
     long blob from wpa\_passphrase YOURNAME YOURPASS
 
  
 
 Configurer le DNSMASQ
 =====================
-
- 
-
- 
-
  
 
  
@@ -70,9 +57,9 @@ Wifi hotspot troubleshooting
  
 
  
+`root@odroidc2:~# hostapd /etc/hostapd.conf`
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-root@odroidc2:~# hostapd /etc/hostapd.conf
 Configuration file: /etc/hostapd.conf
 Driver does not support configured HT capability [DSSS_CCK-40]
 wlan0: interface state UNINITIALIZED->DISABLED
@@ -84,12 +71,25 @@ hostapd_free_hapd_data: Interface wlan0 wasn't started
 nl80211: deinit ifname=wlan0 disabled_11b_rates=0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-make sur the hosted.conf is adapt to your wifi dongle
+>make sur the hosted.conf is adapt to your wifi dongle
 
- 
+
+####Another errors messages
+
+~~~
+Configuration file: /etc/hostapd.conf
+nl80211: Could not configure driver mode
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+nl80211 driver initialization failed.
+wlan0: interface state UNINITIALIZED->DISABLED
+wlan0: AP-DISABLED 
+hostapd_free_hapd_data: Interface wlan0 wasn't started
+~~~
+
+> relancer les services :
+> `/etc/init.d/hostapd stop && /etc/init.d/dnsmasq stop && /etc/init.d/networking restart &&  hostapd /etc/hostapd.conf`
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-root@odroidc2:~# hostapd /etc/hostapd.conf
 Configuration file: /etc/hostapd.conf
 Line 20: unknown configuration item 'noscan'
 1 errors found in configuration file '/etc/hostapd.conf'
@@ -97,9 +97,7 @@ Failed to set up interface with /etc/hostapd.conf
 Failed to initialize interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-the line 20 should be commented
-
- 
+>the line 20 should be commented
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 root@odroidc2:~# /etc/init.d/hostapd stop
