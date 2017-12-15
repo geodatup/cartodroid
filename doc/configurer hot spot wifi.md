@@ -106,38 +106,56 @@ root@odroidc2:~# /etc/init.d/dnsmasq stop
 [ ok ] Stopping dnsmasq (via systemctl): dnsmasq.service.
 root@odroidc2:~# /etc/init.d/networking restart
 [....] Restarting networking (via systemctl): networking.serviceWarning: Unit file of networking.service changed on disk, 'systemctl daemon-reload' recommended.
-. ok 
-root@odroidc2:~# [1] 1680
+root@odroidc2:~# hostapd /etc/hostapd.conf
 Configuration file: /etc/hostapd.conf
 [....] Starting dnsmasq (via systemctl): dnsmasq.serviceUsing interface wlan0 with hwaddr 7c:dd:90:ad:67:c2 and ssid "SSID"
 Job for dnsmasq.service failed. See 'systemctl status dnsmasq.service' and 'journalctl -xn' for details.
  failed!
-root@odroidc2:~# wlan0: interface state UNINITIALIZED->ENABLED
-wlan0: AP-ENABLED 
-root@odroidc2:~# systemctl status dnsmasq.service
-● dnsmasq.service - dnsmasq - A lightweight DHCP and caching DNS server
-   Loaded: loaded (/lib/systemd/system/dnsmasq.service; enabled)
-  Drop-In: /run/systemd/generator/dnsmasq.service.d
-           └─50-dnsmasq-$named.conf, 50-insserv.conf-$named.conf
-   Active: failed (Result: exit-code) since Wed 2016-08-10 09:07:30 CEST; 20s ago
-  Process: 1189 ExecStop=/etc/init.d/dnsmasq systemd-stop-resolvconf (code=exited, status=0/SUCCESS)
-  Process: 782 ExecStartPost=/etc/init.d/dnsmasq systemd-start-resolvconf (code=exited, status=0/SUCCESS)
-  Process: 1692 ExecStart=/etc/init.d/dnsmasq systemd-exec (code=exited, status=2)
-  Process: 1690 ExecStartPre=/usr/sbin/dnsmasq --test (code=exited, status=0/SUCCESS)
- Main PID: 780 (code=exited, status=0/SUCCESS)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  
+après une extinction inopinée de cartodroid 
+~~~
+hostapd /etc/hostapd.conf
+Configuration file: /etc/hostapd.conf
+nl80211: Could not configure driver mode
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+nl80211 driver initialization failed.
+wlan0: interface state UNINITIALIZED->DISABLED
+wlan0: AP-DISABLED
+hostapd_free_hapd_data: Interface wlan0 wasn't started
+~~~
 
-lancer la commande pour voir ce qui se passe en live
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tail -f  /var/log/messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- 
+arreter  les sevices suivants :
+~~~
+/etc/init.d/hostapd stop
+/etc/init.d/dnsmasq stop
+/etc/init.d/networking restart
+~~~
+et les redemarer 
 
-connecter un terminal au hotspot
+/etc/init.d/hostapd start
+/etc/init.d/dnsmasq start
+
+
+
+
+~~~
+root@cartodroid:~# hostapd /etc/hostapd.conf
+Configuration file: /etc/hostapd.conf
+nl80211: Could not configure driver mode
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+nl80211 driver initialization failed.
+wlan0: interface state UNINITIALIZED->DISABLED
+wlan0: AP-DISABLED
+hostapd_free_hapd_data: Interface wlan0 wasn't started
+~~~
+
+Une fois hostapd lancé
+connectez un terminal au hotspot
 
 un message de ce type doit apparaitre
 
@@ -150,6 +168,144 @@ wlan0: STA 00:26:08:f6:83:01 WPA: pairwise key handshake completed (RSN)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 la connection est alors établie.
+
+lorsque vous vous deconectez ces messages apparaissent
+~~~
+wlan0: AP-STA-DISCONNECTED 80:56:f2:25:98:4b
+wlan0: STA 80:56:f2:25:98:4b IEEE 802.11: disassociated
+wlan0: interface state ENABLED->DISABLED
+wlan0: AP-DISABLED
+nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+~~~
+
+
+
+lancer la commande pour voir ce qui se passe en live
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tail -f  /var/log/messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ou verifier les status des services 
+
+~~~
+root@odroidc2:~# systemctl status dnsmasq.service
+● dnsmasq.service - dnsmasq - A lightweight DHCP and caching DNS server
+   Loaded: loaded (/lib/systemd/system/dnsmasq.service; enabled)
+  Drop-In: /run/systemd/generator/dnsmasq.service.d
+           └─50-dnsmasq-$named.conf, 50-insserv.conf-$named.conf
+   Active: failed (Result: exit-code) since Wed 2016-08-10 09:07:30 CEST; 20s ago
+  Process: 1189 ExecStop=/etc/init.d/dnsmasq systemd-stop-resolvconf (code=exited, status=0/SUCCESS)
+  Process: 782 ExecStartPost=/etc/init.d/dnsmasq systemd-start-resolvconf (code=exited, status=0/SUCCESS)
+  Process: 1692 ExecStart=/etc/init.d/dnsmasq systemd-exec (code=exited, status=2)
+  Process: 1690 ExecStartPre=/usr/sbin/dnsmasq --test (code=exited, status=0/SUCCESS)
+ Main PID: 780 (code=exited, status=0/SUCCESS)
+~~~
+
+
+ifdown wlan0 && ifup wlan0 
+et relancer dnsmasq
+
+
+
+si internet n'est pas accessible redemarer le bridge
+DO
+ifdown br0 && ifup br0
+
+et si lizmap n'est pas accessible mais que internet l'est
+deconnection du client du AP wifi 
+
+DO 
+ifdown eth0 && ifup eth0
+
+si la box n'est pas accessible mais qu'internet l'est
+ping 192.168.1.1
+PING 192.168.1.1 (192.168.1.1) 56(84) bytes of data.
+From 192.168.1.98 icmp_seq=1 Destination Host Unreachable
+
+DO
+ifconfig eth0 192.168.1.98
+
+
+CAS déconnection à chaud du eth0
++ deconnection / reconnection de la clé wifi car erreur et disparition du SSID
+~~~
+[ 1436.176842] ieee80211 phy1: rt2x00usb_vendor_request: Error - Vendor Request 0x06 failed for offset 0x0408 with error -110
+~~~
+
+la clé s'allume: débrancher et rebrancher clé wifi
+
+RUN
+./wifi_noweb.sh
+
+
+---
+/etc/init.d/dnsmasq restart
+/etc/init.d/hostapd restart
+
+peut être nécessaire de relancer hostapd avec cette commande 
+hostapd /etc/hostapd.conf
+puis 
+/etc/init.d/hostapd restart
+
+-> connection limité pas d'internet
+Perte de lizmap ...
+verifier 
+systemctl status networking.service
+● networking.service - Raise network interfaces
+   Loaded: loaded (/lib/systemd/system/networking.service; enabled; vendor prese
+  Drop-In: /etc/systemd/system/networking.service.d
+           └─10-nostop.conf
+        /run/systemd/generator/networking.service.d
+           └─50-insserv.conf-$network.conf
+   Active: failed (Result: timeout) since Sat 2017-08-12 08:30:44 UTC; 45min ago
+     Docs: man:interfaces(5)
+  Process: 708 ExecStart=/sbin/ifup -a --read-environment (code=killed, signal=T
+  Process: 508 ExecStartPre=/bin/sh -c [ "$CONFIGURE_INTERFACES" != "no" ] && [
+ Main PID: 708 (code=killed, signal=TERM)
+
+Aug 12 08:25:43 cartodroid systemd[1]: Starting Raise network interfaces...
+Aug 12 08:25:44 cartodroid ifup[708]: /sbin/ifup: waiting for lock on /run/netwo
+Aug 12 08:30:44 cartodroid systemd[1]: networking.service: Start operation timed
+Aug 12 08:30:44 cartodroid systemd[1]: Failed to start Raise network interfaces.
+Aug 12 08:30:44 cartodroid systemd[1]: networking.service: Unit entered failed s
+Aug 12 08:30:44 cartodroid systemd[1]: networking.service: Failed with result 't
+Warning: networking.service changed on disk. Run 'systemctl daemon-reload' to re
+
+DO
+systemctl daemon-reload
+sleep 2
+service dnsmasq restart
+sleep 5
+service networking restart
+sleep 5
+service hostapd restart
+
+-> supprime le AP
+DO 
+service hostapd restart
+
+
+CAS extinction innopinée en mode WIFI no web
+verifier 
+
+lrwxrwxrwx 1 root root    31 Aug 12 11:52 interfaces -> /etc/network/interfaces.hostapd
+
+
+try ./wifi_noweb.sh
+- Plus de AP
+
+./reload_AP.sh
+
+- networking failed
+
+systemctl daemon-reload
+service networking restart
+
+try ./wifi_noweb.sh
+
+
+CAS reconnection à chaud du eth0 / connecté au AP wlan0
 
 ---
 
