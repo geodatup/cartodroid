@@ -1,7 +1,7 @@
 Bienvenue sur la documentation de CartOdroid
 ============================================
 > Attention, il s'agit d'un projet en cours de développement
- 
+
 
 CartOdroid est un outil de collecte et de consultation de données spatiale sur le terrain à partir de projet réalisés sous QGIS.
 
@@ -26,6 +26,8 @@ A quoi sert CartOdroid?
     tablettes, smartphones, pc (apple, android, windows, linux) directement
     depuis le navigateur internet sans applications supplémentaires.
 
+# Avantage
+
 -  Les données sont synchronisées vers une base de donnée de sauvegardées quand
     le serveur dispose d'une connexion internet sécurisée.
 
@@ -36,9 +38,6 @@ A quoi sert CartOdroid?
 
 -   Faite des économies avec des licences d'utilisation gratuites et
     OpenSource.
-    
-
-
 
 Les fonctionnalités
 -------------------
@@ -51,9 +50,9 @@ il faut vous s’authentifier.
 [Plus de détail dans la documentation de Lizmap](<http://docs.3liz.com/fr/user_guide.html#authentication>)
 
 ### Recherche d’adresse
- 
+
 La recherche des adresses se fait via les moteurs de recherches suivants : 
- 
+
 * Nominatim (OpenStreetMap) 
 * Google
 * Géoportail
@@ -84,7 +83,7 @@ page est ajusté en fonction de vos préférences.
 L’auteur de la carte peut permettre à des utilisateurs l’édition de certaines
 données. Il a aussi la possibilité de limiter les modifications possibles :
 
--   ajout d’objet
+-   Ajout d’objet
 
 -   modification géométrique
 
@@ -92,7 +91,7 @@ données. Il a aussi la possibilité de limiter les modifications possibles :
 
 -   suppression d’objet
 
- 
+
 
 Les briques techniques
 ----------------------

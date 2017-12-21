@@ -328,18 +328,19 @@ ifdown: waiting for lock on /run/network/ifstate.wlan0
 ---
 #Outils de debug
 ###IPTABLES
+
 `iptables -nvL`
 
 `iptables -L --line-numbers`
 
  voir la [doc](http://www.octetmalin.net/linux/tutoriels/ip-forward.php) 
  
- ~~~
+~~~
  sysctl net.ipv4.ip_forward
  sysctl -w net.ipv4.ip_forward=1
 nano /etc/sysctl.conf
  sysctl -p /etc/sysctl.conf
- ~~~
+~~~
 
 ###Check routes
 
